@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="409.60001"
+   height="585.14301"
+   viewBox="0 0 108.37334 154.8191"
+   version="1.1"
+   id="svg60"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="asteroid.svg">
+  <defs
+     id="defs54" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="166.05789"
+     inkscape:cy="283.88834"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1080"
+     inkscape:window-height="1867"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     units="px" />
+  <metadata
+     id="metadata57">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-266.17085,-291.17911)">
+    <rect
+       style="fill:#f9f9f9;stroke:none;stroke-width:2.11666656;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect75"
+       width="137.96132"
+       height="183.31844"
+       x="252.56371"
+       y="278.93271" />
+    <text
+       id="text3743"
+       y="319.56009"
+       x="319.42212"
+       style="font-style:normal;font-weight:normal;font-size:8.83767796px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.22094193"
+       xml:space="preserve"
+       transform="scale(1.0036523,0.99636099)"><tspan
+         style="text-align:center;text-anchor:middle;stroke-width:0.22094193"
+         y="319.56009"
+         x="319.42212"
+         id="tspan3741"
+         sodipodi:role="line">Asteroid</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.83767796px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.22094193"
+       x="319.07904"
+       y="310.28055"
+       id="text3773"
+       transform="scale(1.0036523,0.99636098)"><tspan
+         sodipodi:role="line"
+         id="tspan3771"
+         x="319.07904"
+         y="310.28055"
+         style="font-size:14.72946167px;text-align:center;text-anchor:middle;stroke-width:0.22094193">{name}</tspan></text>
+    <g
+       transform="matrix(0.83810606,0,0,0.83201737,266.47252,197.42705)"
+       id="g96">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:0.26458335"
+         r="10.186459"
+         cy="281.65417"
+         cx="101.60001"
+         id="circle3749" />
+    </g>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.22094193"
+       id="rect3779"
+       width="95.795525"
+       height="93.558609"
+       x="271.79449"
+       y="326.10202" />
+    <g
+       transform="matrix(0.83810606,0,0,0.83201737,266.47252,197.42705)"
+       id="g93">
+      <circle
+         id="circle33"
+         cx="63.5"
+         cy="281.65417"
+         r="10.186459"
+         style="fill:none;stroke:#000000;stroke-width:0.26458335" />
+    </g>
+    <g
+       transform="matrix(0.83810606,0,0,0.83201737,266.47252,197.42705)"
+       id="g90">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:0.26458335"
+         r="10.186459"
+         cy="281.65417"
+         cx="25.400002"
+         id="circle35" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="287.76041"
+       y="434.77579"
+       id="text47"><tspan
+         sodipodi:role="line"
+         id="tspan45"
+         x="287.76041"
+         y="434.77579"
+         style="stroke-width:0.26458332">{r1}</tspan></text>
+    <text
+       id="text61"
+       y="434.77579"
+       x="319.69226"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.26458332"
+         y="434.77579"
+         x="319.69226"
+         id="tspan59"
+         sodipodi:role="line">{r2}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="351.62411"
+       y="434.77579"
+       id="text65"><tspan
+         sodipodi:role="line"
+         id="tspan63"
+         x="351.62411"
+         y="434.77579"
+         style="stroke-width:0.26458332">{r3}</tspan></text>
+  </g>
+</svg>
