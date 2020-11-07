@@ -104,47 +104,43 @@ def mkguid(func):
 @mkguid
 def board(image_url):
     return {
-      "Name": "Custom_Board",
-      "Transform": {
-        "posX": 4.29940462,
-        "posY": 2.00714159,
-        "posZ": 5.20972157,
-        "rotX": 0.0116666686,
-        "rotY": 179.910736,
-        "rotZ": 359.941925,
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
-      },
-      "Nickname": "",
-      "Description": "",
-      "GMNotes": "",
-      "ColorDiffuse": {
-        "r": 0.7867647,
-        "g": 0.7867647,
-        "b": 0.7867647
-      },
-      "Locked": False,
-      "Grid": True,
-      "Snap": True,
-      "IgnoreFoW": False,
-      "MeasureMovement": False,
-      "DragSelectable": True,
-      "Autoraise": True,
-      "Sticky": True,
-      "Tooltip": True,
-      "GridProjection": False,
-      "HideWhenFaceDown": False,
-      "Hands": False,
-      "CustomImage": {
-        "ImageURL": image_url,
-        "ImageSecondaryURL": "",
-        "ImageScalar": 1.0,
-        "WidthScale": 0.9524941,
-      },
-      "LuaScript": "",
-      "LuaScriptState": "",
-      "XmlUI": "",
+        "Name": "Custom_Board",
+        "Transform": {
+            "posX": 4.29940462,
+            "posY": 2.00714159,
+            "posZ": 5.20972157,
+            "rotX": 0.0116666686,
+            "rotY": 179.910736,
+            "rotZ": 359.941925,
+            "scaleX": 1.0,
+            "scaleY": 1.0,
+            "scaleZ": 1.0,
+        },
+        "Nickname": "",
+        "Description": "",
+        "GMNotes": "",
+        "ColorDiffuse": {"r": 0.7867647, "g": 0.7867647, "b": 0.7867647},
+        "Locked": False,
+        "Grid": True,
+        "Snap": True,
+        "IgnoreFoW": False,
+        "MeasureMovement": False,
+        "DragSelectable": True,
+        "Autoraise": True,
+        "Sticky": True,
+        "Tooltip": True,
+        "GridProjection": False,
+        "HideWhenFaceDown": False,
+        "Hands": False,
+        "CustomImage": {
+            "ImageURL": image_url,
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1.0,
+            "WidthScale": 0.9524941,
+        },
+        "LuaScript": "",
+        "LuaScriptState": "",
+        "XmlUI": "",
     }
 
 
@@ -301,21 +297,9 @@ def asteroid_from_record(record):
         "Uranium": "U",
         "Gold": "Au",
     }
-    triples = [
-        k
-        for (k, v) in record.items()
-        if v == "3"
-    ]
-    doubles = [
-        k
-        for (k, v) in record.items()
-        if v == "2"
-    ]
-    singles = [
-        k
-        for (k, v) in record.items()
-        if v == "1"
-    ]
+    triples = [k for (k, v) in record.items() if v == "3"]
+    doubles = [k for (k, v) in record.items() if v == "2"]
+    singles = [k for (k, v) in record.items() if v == "1"]
     resources_present = triples * 3 + doubles * 2 + singles * 1
     resources = dict(
         zip(
@@ -361,29 +345,19 @@ def make_decks(
 
 
 def sheet_entries(
-    client,
-    url,
-    sheet,
-    direct=False,
-    rng=None,
-    indirect=None,
+    client, url, sheet, direct=False, rng=None, indirect=None,
 ):
     book = client.open_by_url(url)
-    sheet = book.worksheet(sheet_name)
+    sheet_ = book.worksheet(sheet)
 
     if rng:
-        data = sheet.get(rng)
-        return [
-            dict(zip(data[0], entry))
-            for entry in data[1:]
-        ]
-    elif direct:
-        return sheet.get_all_records()
+        data = sheet_.get(rng)
+        return [dict(zip(data[0], entry)) for entry in data[1:]]
     elif indirect:
-        sheet_range = sheet.get(indirect)[0][0]
+        sheet_range = sheet_.get(indirect)[0][0]
         return sheet_entries(client, url, sheet, rng=sheet_range)
     else:
-        return sheet_entries(client, url, sheet, indirect="A1")
+        return sheet_.get_all_records()
 
 
 #
@@ -397,9 +371,7 @@ generators = {
 
 
 def main():
-    gsheet_client = Client(
-        sheets.login("sheets-credentials.json")
-    )
+    gsheet_client = Client(sheets.login("sheets-credentials.json"))
 
     with open(f"{prefix}/decks/decks.json") as f:
         manifest = json.load(f)
@@ -412,12 +384,11 @@ def main():
         # Just skip those types that we don't know how to generate
         # yet
         if not generator:
-            print(f"(skipping {name} as we don't know how to generate these yet)")
+            print(
+                f"(skipping {name} as we don't know how to generate these yet)"
+            )
             continue
-        records = sheet_entries(
-            gsheet_client,
-            **src
-        )
+        records = sheet_entries(gsheet_client, **src)
         decks = make_decks(
             records,
             pil_author_front=generator,
