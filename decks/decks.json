@@ -21,12 +21,10 @@
     },
     "goal": {
         "url": "https://docs.google.com/spreadsheets/d/11wSOOs8PUlC7pVPRMaJR2fSCJ4nlJw2U9UmSqq0h9Mo/edit#gid=48481358",
-        "sheet": "goals",
-        "direct": true
+        "sheet": "goals"
     },
     "action": {
         "url": "https://docs.google.com/spreadsheets/d/11wSOOs8PUlC7pVPRMaJR2fSCJ4nlJw2U9UmSqq0h9Mo/edit#gid=48481358",
-        "sheet": "?actions?",
-        "direct": true
+        "sheet": "?actions?"
     }
 }

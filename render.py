@@ -344,9 +344,7 @@ def make_decks(
     ]
 
 
-def sheet_entries(
-    client, url, sheet, direct=False, rng=None, indirect=None,
-):
+def sheet_entries(client, url, sheet, rng=None, indirect=None):
     book = client.open_by_url(url)
     sheet_ = book.worksheet(sheet)
 
