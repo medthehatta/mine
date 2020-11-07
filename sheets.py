@@ -30,3 +30,17 @@ def login(credential_file_path):
             )
 
     return creds
+
+
+def entries(client, url, sheet, rng=None, indirect=None):
+    book = client.open_by_url(url)
+    sheet_ = book.worksheet(sheet)
+
+    if rng:
+        data = sheet_.get(rng)
+        return [dict(zip(data[0], entry)) for entry in data[1:]]
+    elif indirect:
+        sheet_range = sheet_.get(indirect)[0][0]
+        return entries(client, url, sheet, rng=sheet_range)
+    else:
+        return sheet_.get_all_records()
