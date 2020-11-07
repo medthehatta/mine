@@ -112,7 +112,6 @@ def split_to_multiple_fields(text, field_name, chars_per, max_lines):
     segments = []
     current_segment = []
     for word in text.split():
-        print(word)
         if sum(len(w) for w in current_segment) + len(word) < chars_per:
             current_segment.append(word)
         else:

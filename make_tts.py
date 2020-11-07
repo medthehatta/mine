@@ -243,9 +243,9 @@ def make_decks(
 
 
 generators = {
-#    "asteroid": entities.asteroid_from_record,
-#    "module": entities.module_from_record,
-#    "upgrade": entities.upgrade_from_record,
+    "asteroid": entities.asteroid_from_record,
+    "module": entities.module_from_record,
+    "upgrade": entities.upgrade_from_record,
     "action": entities.action_from_record,
 }
 
