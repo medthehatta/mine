@@ -45,7 +45,13 @@ def base64_pil(pil, fmt="JPEG"):
 
 def upload_pil_to_imgur_get_url(pil):
     r = upload_pil_to_imgur(pil)
-    r.raise_for_status()
+    try:
+        r.raise_for_status()
+    except requests.exceptions.HTTPError:
+        print(
+            f"<<<< REQUEST\n{r.request.__dict__}\n>>>> RESPONSE\n{r.__dict__}"
+        )
+        raise
     return r.json().get("data", {}).get("link")
 
 
