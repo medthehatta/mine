@@ -1,0 +1,7 @@
+*.sw[plo]
+venv*
+sheets-credentials.json
+saved-objects
+token.pickle
+__pycache__
+Saved\ Objects.lnk
