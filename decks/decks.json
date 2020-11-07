@@ -1,0 +1,32 @@
+{
+    "settlement": {
+        "url": "https://docs.google.com/spreadsheets/d/11wSOOs8PUlC7pVPRMaJR2fSCJ4nlJw2U9UmSqq0h9Mo/edit#gid=48481358",
+        "sheet": "settlements",
+        "range": "A1:F5"
+    },
+    "asteroid": {
+        "url": "https://docs.google.com/spreadsheets/d/11wSOOs8PUlC7pVPRMaJR2fSCJ4nlJw2U9UmSqq0h9Mo/edit#gid=48481358",
+        "sheet": "asteroid-like",
+        "range": "A2:F15"
+    },
+    "module": {
+        "url": "https://docs.google.com/spreadsheets/d/11wSOOs8PUlC7pVPRMaJR2fSCJ4nlJw2U9UmSqq0h9Mo/edit#gid=48481358",
+        "sheet": "module",
+        "range": "A2:L12"
+    },
+    "upgrade": {
+        "url": "https://docs.google.com/spreadsheets/d/11wSOOs8PUlC7pVPRMaJR2fSCJ4nlJw2U9UmSqq0h9Mo/edit#gid=48481358",
+        "sheet": "major-upgrades",
+        "range": "A2:U6"
+    },
+    "goal": {
+        "url": "https://docs.google.com/spreadsheets/d/11wSOOs8PUlC7pVPRMaJR2fSCJ4nlJw2U9UmSqq0h9Mo/edit#gid=48481358",
+        "sheet": "goals",
+        "range": "A1:R7"
+    },
+    "action": {
+        "url": "https://docs.google.com/spreadsheets/d/11wSOOs8PUlC7pVPRMaJR2fSCJ4nlJw2U9UmSqq0h9Mo/edit#gid=48481358",
+        "sheet": "?actions?",
+        "range": "A1:C10"
+    }
+}

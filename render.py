@@ -5,12 +5,17 @@ import json
 from hashlib import sha1
 from io import BytesIO
 import base64
+import os
 
 import requests
 from PIL import Image
 from svglib.svglib import SvgRenderer
 from lxml import etree
 from reportlab.graphics import renderPM
+from cytoolz import partition_all
+from gspread.client import Client
+
+import sheets
 
 
 #
@@ -24,31 +29,6 @@ prefix = "/mnt/c/Users/Med/Desktop/matt-asteroids/"
 #
 # Business
 #
-
-
-def make_deck(
-    records, svg_author_front, svg_author_back, uploader,
-):
-    records = list(records)
-    fronts = layout_pils(
-        (svg_author_front(record) for record in records),
-        num_width=10,
-        num_height=7,
-    )
-    front_url = uploader(fronts)
-    backs = layout_pils(
-        (svg_author_back(record) for record in records),
-        num_width=10,
-        num_height=7,
-    )
-    back_url = uploader(backs)
-    return deck(
-        front_url,
-        back_url,
-        num_cards=len(records),
-        num_width=10,
-        num_height=7,
-    )
 
 
 def svg_string_to_pil(svg):
@@ -284,11 +264,9 @@ def game(objects):
     }
 
 
-def author_asteroid(record):
-    with open("/mnt/c/Users/Med/Desktop/matt-asteroids/asteroid.svg") as f:
-        template = f.read()
-    svg = template.format(**record)
-    return svg_string_to_pil(svg)
+def generic_back(name):
+    generator = raw_interpolate_svg(f"{prefix}/svg_templates/generic-back.svg")
+    return lambda _: generator({"name": name})
 
 
 def raw_interpolate_svg(path):
@@ -315,7 +293,7 @@ def constant_svg_from_path(path):
 
 
 def asteroid_from_record(record):
-    interpolator = raw_interpolate_svg(f"{prefix}/asteroid.svg")
+    interpolator = raw_interpolate_svg(f"{prefix}/svg_templates/asteroid.svg")
     abbreviations = {
         "Iron": "Fe",
         "Silicates": "Si",
@@ -326,17 +304,17 @@ def asteroid_from_record(record):
     triples = [
         k
         for (k, v) in record.items()
-        if isinstance(v, (int, float)) and v == 3
+        if v == "3"
     ]
     doubles = [
         k
         for (k, v) in record.items()
-        if isinstance(v, (int, float)) and v == 2
+        if v == "2"
     ]
     singles = [
         k
         for (k, v) in record.items()
-        if isinstance(v, (int, float)) and v == 1
+        if v == "1"
     ]
     resources_present = triples * 3 + doubles * 2 + singles * 1
     resources = dict(
@@ -347,132 +325,99 @@ def asteroid_from_record(record):
     return interpolator({"name": record["Name"], **resources})
 
 
+def make_deck(
+    records, pil_author_front, pil_author_back, uploader,
+):
+    records = list(records)
+    fronts = layout_pils(
+        (pil_author_front(record) for record in records),
+        num_width=10,
+        num_height=7,
+    )
+    front_url = uploader(fronts)
+    backs = layout_pils(
+        (pil_author_back(record) for record in records),
+        num_width=10,
+        num_height=7,
+    )
+    back_url = uploader(backs)
+    return deck(
+        front_url,
+        back_url,
+        num_cards=len(records),
+        num_width=10,
+        num_height=7,
+    )
+
+
+def make_decks(
+    records, pil_author_front, pil_author_back, uploader,
+):
+    record_batches = partition_all(70, records)
+    return [
+        make_deck(batch, pil_author_front, pil_author_back, uploader)
+        for batch in record_batches
+    ]
+
+
+def sheet_entries(client, url, sheet_name, sheet_range):
+    book = client.open_by_url(url)
+    sheet = book.worksheet(sheet_name)
+    data = sheet.get(sheet_range)
+    return [
+        dict(zip(data[0], entry))
+        for entry in data[1:]
+    ]
+
+
 #
 # Entry point
 #
 
 
-def main():
-    asteroids = [
-        {
-            "Gold": 0,
-            "Ice": 1.0,
-            "Iron": 2.0,
-            "Name": "Vesta",
-            "Silicates": 0,
-            "Uranium": 0,
-        },
-        {
-            "Gold": 0,
-            "Ice": 1.0,
-            "Iron": 1.0,
-            "Name": "Pallas",
-            "Silicates": 1.0,
-            "Uranium": 0,
-        },
-        {
-            "Gold": 0,
-            "Ice": 1.0,
-            "Iron": 0,
-            "Name": "Hygiea",
-            "Silicates": 2.0,
-            "Uranium": 0,
-        },
-        {
-            "Gold": 2.0,
-            "Ice": 0,
-            "Iron": 1.0,
-            "Name": "Psyche",
-            "Silicates": 0,
-            "Uranium": 0,
-        },
-        {
-            "Gold": 0,
-            "Ice": 2.0,
-            "Iron": 1.0,
-            "Name": "Eros",
-            "Silicates": 0,
-            "Uranium": 0,
-        },
-        {
-            "Gold": 0,
-            "Ice": 3.0,
-            "Iron": 0,
-            "Name": "Interamnia",
-            "Silicates": 0,
-            "Uranium": 0,
-        },
-        {
-            "Gold": 0,
-            "Ice": 2.0,
-            "Iron": 0,
-            "Name": "Davida",
-            "Silicates": 1.0,
-            "Uranium": 0,
-        },
-        {
-            "Gold": 0,
-            "Ice": 0,
-            "Iron": 0,
-            "Name": "Sylvia",
-            "Silicates": 3.0,
-            "Uranium": 0,
-        },
-        {
-            "Gold": 0,
-            "Ice": 0,
-            "Iron": 1.0,
-            "Name": "Eunomia",
-            "Silicates": 2.0,
-            "Uranium": 0,
-        },
-        {
-            "Gold": 0,
-            "Ice": 0,
-            "Iron": 2.0,
-            "Name": "Euphrosyne",
-            "Silicates": 1.0,
-            "Uranium": 0,
-        },
-        {
-            "Gold": 0,
-            "Ice": 0,
-            "Iron": 3.0,
-            "Name": "Hesperia",
-            "Silicates": 0,
-            "Uranium": 0,
-        },
-        {
-            "Gold": 0,
-            "Ice": 1.0,
-            "Iron": 0,
-            "Name": "Comet Fragment",
-            "Silicates": 0,
-            "Uranium": 2.0,
-        },
-        {
-            "Gold": 1.0,
-            "Ice": 0,
-            "Iron": 0,
-            "Name": "Derelict Satellite",
-            "Silicates": 1.0,
-            "Uranium": 1.0,
-        },
-    ]
-    my_deck = make_deck(
-        asteroids,
-        svg_author_front=asteroid_from_record,
-        svg_author_back=constant_svg_from_path(
-            f"{prefix}/asteroid-backs.svg",
-        ),
-        uploader=upload_pil_to_imgur_get_url,
-    )
-    result = json.dumps(game([my_deck]))
+generators = {
+    "asteroid": asteroid_from_record,
+}
 
-    with open(f"{prefix}/saved-objects/Foo.json", "w") as f:
-        f.write(result)
-    print(result)
-    return result
+
+def main():
+    gsheet_client = Client(
+        sheets.login("sheets-credentials.json")
+    )
+
+    with open(f"{prefix}/decks/decks.json") as f:
+        manifest = json.load(f)
+
+    all_decks = {}
+
+    for (name, src) in manifest.items():
+        print(f"Processing {name}...")
+        generator = generators.get(name)
+        # Just skip those types that we don't know how to generate
+        # yet
+        if not generator:
+            print(f"(skipping {name} as we don't know how to generate these yet)")
+            continue
+        records = sheet_entries(
+            gsheet_client,
+            url=src["url"],
+            sheet_name=src["sheet"],
+            sheet_range=src["range"],
+        )
+        decks = make_decks(
+            records,
+            pil_author_front=generator,
+            pil_author_back=generic_back(name),
+            uploader=upload_pil_to_imgur_get_url,
+        )
+
+        with open(f"{prefix}/decks/out/{name}.json", "w") as f:
+            json.dump(game(decks), f)
+        print(json.dumps(decks))
+
+        all_decks[name] = decks
+
+    return all_decks
 
 
 if __name__ == "__main__":
