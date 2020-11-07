@@ -6,6 +6,7 @@ from hashlib import sha1
 from io import BytesIO
 import base64
 import os
+import shutil
 
 import requests
 from PIL import Image
@@ -258,6 +259,13 @@ def main():
 
     all_decks = {}
 
+    if not os.path.exists(f"{prefix}/decks"):
+        os.mkdir(f"{prefix}/decks")
+    if not os.path.exists(f"{prefix}/decks/ark"):
+        os.mkdir(f"{prefix}/decks/ark")
+    if not os.path.exists(f"{prefix}/decks/out"):
+        os.mkdir(f"{prefix}/decks/out")
+
     for (name, src) in manifest.items():
         print(f"Processing {name}...")
         generator = generators.get(name)
@@ -276,12 +284,20 @@ def main():
             uploader=render_pil.upload_pil_to_imgur_get_url,
         )
 
+        with open(f"{prefix}/decks/ark/{name}.json", "w") as f:
+            json.dump(game(decks), f)
         with open(f"{prefix}/decks/out/{name}.json", "w") as f:
             json.dump(game(decks), f)
+
         print(json.dumps(decks))
 
         all_decks[name] = decks
 
+    shutil.make_archive(
+        f"{prefix}/decks.zip",
+        "zip",
+        f"{prefix}/decks/ark",
+    )
     return all_decks
 
 
