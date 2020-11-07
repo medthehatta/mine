@@ -4,6 +4,7 @@
 import os
 
 
+from cytoolz import partition_all
 from render_pil import raw_interpolate_svg
 
 
@@ -86,3 +87,49 @@ def upgrade_from_record(record):
     data = {**defaults, **modules, **record}
     interpolator = raw_interpolate_svg(f"{prefix}/svg_templates/upgrade.svg")
     return interpolator(data)
+
+
+def action_from_record(record):
+    fields = [
+        "Name",
+        "Settlement",
+        "Rules text",
+    ]
+    defaults = {k: "" for k in fields}
+    data = {**defaults, **record}
+    rules_text_split = split_to_multiple_fields(
+        data["Rules text"],
+        field_name="Rules text",
+        chars_per=24,
+        max_lines=7,
+    )
+    data.update(rules_text_split)
+    interpolator = raw_interpolate_svg(f"{prefix}/svg_templates/action.svg")
+    return interpolator(data)
+
+
+def split_to_multiple_fields(text, field_name, chars_per, max_lines):
+    segments = []
+    current_segment = []
+    for word in text.split():
+        print(word)
+        if sum(len(w) for w in current_segment) + len(word) < chars_per:
+            current_segment.append(word)
+        else:
+            segments.append(" ".join(current_segment))
+            current_segment = [word]
+    segments.append(" ".join(current_segment))
+
+    default = {f"{field_name}#{i}": "" for i in range(1, max_lines+1)}
+    populated = {
+        f"{field_name}#{i}": "".join(segment)
+        for (i, segment) in enumerate(segments, start=1)
+        if segment
+    }
+    if len(populated) > max_lines:
+        raise ValueError(
+            f"Need more lines; {max_lines} available, "
+            f"{len(populated)} required."
+        )
+    else:
+        return {**default, **populated}
