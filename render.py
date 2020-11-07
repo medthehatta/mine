@@ -360,14 +360,30 @@ def make_decks(
     ]
 
 
-def sheet_entries(client, url, sheet_name, sheet_range):
+def sheet_entries(
+    client,
+    url,
+    sheet,
+    direct=False,
+    rng=None,
+    indirect=None,
+):
     book = client.open_by_url(url)
     sheet = book.worksheet(sheet_name)
-    data = sheet.get(sheet_range)
-    return [
-        dict(zip(data[0], entry))
-        for entry in data[1:]
-    ]
+
+    if rng:
+        data = sheet.get(rng)
+        return [
+            dict(zip(data[0], entry))
+            for entry in data[1:]
+        ]
+    elif direct:
+        return sheet.get_all_records()
+    elif indirect:
+        sheet_range = sheet.get(indirect)[0][0]
+        return sheet_entries(client, url, sheet, rng=sheet_range)
+    else:
+        return sheet_entries(client, url, sheet, indirect="A1")
 
 
 #
@@ -400,9 +416,7 @@ def main():
             continue
         records = sheet_entries(
             gsheet_client,
-            url=src["url"],
-            sheet_name=src["sheet"],
-            sheet_range=src["range"],
+            **src
         )
         decks = make_decks(
             records,
