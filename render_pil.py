@@ -6,6 +6,7 @@ from hashlib import sha1
 from io import BytesIO
 import base64
 import os
+import tempfile
 
 import requests
 from PIL import Image
@@ -41,6 +42,15 @@ def base64_pil(pil, fmt="JPEG"):
     buffered = BytesIO()
     pil.save(buffered, format=fmt)
     return base64.b64encode(buffered.getvalue())
+
+
+def upload_pil_to_mancer(pil):
+    name = sha1(pil.tobytes()).hexdigest()
+    with tempfile.NamedTemporaryFile() as f:
+        pil.save(f, format="JPEG")
+        os.system(f"scp '{f.name}' 'med@mancer.in:/var/www/files/cards/{name}.jpg'")
+        os.system(f"ssh med@mancer.in chmod a+r /var/www/files/cards/{name}.jpg")
+    return f"https://files.mancer.in/cards/{name}.jpg"
 
 
 def upload_pil_to_imgur_get_url(pil):
