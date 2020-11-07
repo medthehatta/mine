@@ -39,3 +39,24 @@ def asteroid_from_record(record):
         ),
     )
     return interpolator({"name": record["Name"], **resources})
+
+
+def module_from_record(record):
+    fields = [
+        "Rules Text",
+        "Adjacent",
+        "Anywhere 1",
+        "Anywhere 2",
+        "Not Adjacent",
+        "Iron",
+        "Ice",
+        "Silicate",
+        "VP",
+        "Gold",
+        "Uranium",
+    ]
+    defaults = {k: "" for k in fields}
+    data = {**defaults, **record}
+    data_formatted = {k.replace(" ", "_"): v for (k, v) in data.items()}
+    interpolator = raw_interpolate_svg(f"{prefix}/svg_templates/module.svg")
+    return interpolator(data_formatted)
