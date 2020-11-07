@@ -294,7 +294,8 @@ def main():
         all_decks[name] = decks
 
     shutil.make_archive(
-        f"{prefix}/decks.zip",
+        # Apparently need to omit the .zip; it will add the extension itself
+        f"{prefix}/decks",
         "zip",
         f"{prefix}/decks/ark",
     )
