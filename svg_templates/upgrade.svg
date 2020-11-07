@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="module.svg">
+   sodipodi:docname="upgrade.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="285.79614"
-     inkscape:cy="342.84299"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="366.82151"
+     inkscape:cy="320.12784"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,12 +56,12 @@
      id="layer1"
      transform="translate(0,-170.00005)">
     <rect
-       style="fill:none;stroke:#000000;stroke-width:0.25185999"
+       style="fill:none;stroke:#000000;stroke-width:0.1415028"
        id="rect3851"
-       width="172.66049"
-       height="60.134106"
-       x="5.1097593"
-       y="228.70451" />
+       width="172.77084"
+       height="18.969461"
+       x="5.0545807"
+       y="269.92435" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -84,17 +84,6 @@
          x="33.675961"
          y="149.87523"
          style="stroke-width:0.26458335" /></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
-       x="26.766521"
-       y="217.01999"
-       id="text3839"><tspan
-         sodipodi:role="line"
-         id="tspan3837"
-         x="26.766521"
-         y="217.01999"
-         style="font-size:7.05555582px;text-align:start;text-anchor:start;stroke-width:0.26458335">{Not Adjacent}</tspan></text>
     <g
        transform="translate(38.925245,-5.9226355)"
        id="g3849">
@@ -104,11 +93,11 @@
          x="88.338654"
          style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
          xml:space="preserve"><tspan
-           style="text-align:center;text-anchor:middle;stroke-width:0.26458335;font-size:9.87777813px"
+           style="font-size:9.87777805px;text-align:center;text-anchor:middle;stroke-width:0.26458335"
            y="201.03661"
            x="88.338654"
            id="tspan3841"
-           sodipodi:role="line">Module</tspan></text>
+           sodipodi:role="line">Major Upgrade</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
@@ -121,28 +110,6 @@
            y="189.65953"
            style="font-size:12.34722233px;text-align:center;text-anchor:middle;stroke-width:0.26458335">{Name}</tspan></text>
     </g>
-    <text
-       id="text3816"
-       y="206.43665"
-       x="26.766521"
-       style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
-       xml:space="preserve"><tspan
-         style="font-size:7.05555582px;text-align:start;text-anchor:start;stroke-width:0.26458335"
-         y="206.43665"
-         x="26.766521"
-         id="tspan3814"
-         sodipodi:role="line">{Anywhere 1}</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
-       x="26.766521"
-       y="195.8533"
-       id="text3820"><tspan
-         sodipodi:role="line"
-         id="tspan3818"
-         x="26.766521"
-         y="195.8533"
-         style="font-size:7.05555582px;text-align:start;text-anchor:start;stroke-width:0.26458335">{Adjacent}</tspan></text>
     <circle
        style="fill:none;stroke:#000000;stroke-width:0.16864043"
        r="6.4926567"
@@ -200,88 +167,60 @@
          y="179.3044"
          style="text-align:center;text-anchor:middle;stroke-width:0.16864043">{Silicate}</tspan></text>
     <circle
-       id="path3745-0"
-       cx="106.02637"
-       cy="211.68764"
-       r="6.4926558"
-       style="fill:none;stroke:#000000;stroke-width:0.16864043" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:6.74561644px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16864043"
-       x="105.37091"
-       y="216.24089"
-       id="text3753-0"><tspan
-         sodipodi:role="line"
-         id="tspan3751-3"
-         x="105.37091"
-         y="216.24089"
-         style="font-weight:bold;text-align:center;text-anchor:middle;stroke-width:0.16864043">VP</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:6.74561644px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16864043"
-       x="105.53395"
-       y="211.01311"
-       id="text3825-4"><tspan
-         sodipodi:role="line"
-         id="tspan3823-3"
-         x="105.53395"
-         y="211.01311"
-         style="text-align:center;text-anchor:middle;stroke-width:0.16864043">{VP}</tspan></text>
-    <circle
        style="fill:none;stroke:#000000;stroke-width:0.16864043"
        r="6.4926558"
-       cy="211.68764"
-       cx="127.19304"
+       cy="195.81264"
+       cx="22.947203"
        id="circle3846-5" />
     <text
        id="text3850-2"
-       y="216.24089"
-       x="127.65736"
+       y="200.36589"
+       x="23.41152"
        style="font-style:normal;font-weight:normal;font-size:6.74561644px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16864043"
        xml:space="preserve"><tspan
          style="font-weight:bold;text-align:center;text-anchor:middle;stroke-width:0.16864043"
-         y="216.24089"
-         x="127.65736"
+         y="200.36589"
+         x="23.41152"
          id="tspan3848-3"
          sodipodi:role="line">Au</tspan></text>
     <text
        id="text3854-1"
-       y="211.01311"
-       x="126.70061"
+       y="195.13811"
+       x="22.454771"
        style="font-style:normal;font-weight:normal;font-size:6.74561644px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16864043"
        xml:space="preserve"><tspan
          style="text-align:center;text-anchor:middle;stroke-width:0.16864043"
-         y="211.01311"
-         x="126.70061"
+         y="195.13811"
+         x="22.454771"
          id="tspan3852-4"
          sodipodi:role="line">{Gold}</tspan></text>
     <circle
        id="circle3856-5"
-       cx="148.35971"
-       cy="211.68764"
+       cx="44.113873"
+       cy="195.81264"
        r="6.4926558"
        style="fill:none;stroke:#000000;stroke-width:0.16864043" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:6.74561644px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16864043"
-       x="147.70424"
-       y="216.24089"
+       x="43.458401"
+       y="200.36589"
        id="text3860-0"><tspan
          sodipodi:role="line"
          id="tspan3858-7"
-         x="147.70424"
-         y="216.24089"
+         x="43.458401"
+         y="200.36589"
          style="font-weight:bold;text-align:center;text-anchor:middle;stroke-width:0.16864043">U</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:6.74561644px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16864043"
-       x="147.86729"
-       y="211.01311"
+       x="43.621456"
+       y="195.13811"
        id="text3864-0"><tspan
          sodipodi:role="line"
          id="tspan3862-4"
-         x="147.86729"
-         y="211.01311"
+         x="43.621456"
+         y="195.13811"
          style="text-align:center;text-anchor:middle;stroke-width:0.16864043">{Uranium}</tspan></text>
     <circle
        style="fill:none;stroke:#000000;stroke-width:0.16864043"
@@ -312,48 +251,131 @@
          id="tspan4009"
          sodipodi:role="line">{Iron}</tspan></text>
     <text
-       id="text4015"
-       y="195.8533"
-       x="26.021"
-       style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
-       xml:space="preserve"><tspan
-         style="font-weight:bold;font-size:7.05555582px;text-align:end;text-anchor:end;stroke-width:0.26458335"
-         y="195.8533"
-         x="26.020998"
-         id="tspan4013"
-         sodipodi:role="line">Adj:</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
-       x="26.021"
-       y="206.43665"
-       id="text4019"><tspan
-         sodipodi:role="line"
-         id="tspan4017"
-         x="26.021"
-         y="206.43665"
-         style="font-weight:bold;font-size:7.05555582px;text-align:end;text-anchor:end;stroke-width:0.26458335">Any:</tspan></text>
-    <text
-       id="text4023"
-       y="217.01999"
-       x="26.021"
-       style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
-       xml:space="preserve"><tspan
-         style="font-weight:bold;font-size:7.05555582px;text-align:end;text-anchor:end;stroke-width:0.26458335"
-         y="217.01999"
-         x="26.021"
-         id="tspan4021"
-         sodipodi:role="line">Not:</tspan></text>
-    <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
        x="4.3878279"
-       y="240.90839"
+       y="281.65424"
        id="text4027"><tspan
          sodipodi:role="line"
          id="tspan4025"
          x="4.3878279"
-         y="240.90839"
+         y="281.65424"
          style="font-size:7.05555582px;text-align:start;text-anchor:start;stroke-width:0.26458335">{Rules Text}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+       x="14.755689"
+       y="219.74171"
+       id="text4031"><tspan
+         sodipodi:role="line"
+         id="tspan4029"
+         x="14.755689"
+         y="219.74171"
+         style="font-size:7.05555582px;text-align:start;text-anchor:start;stroke-width:0.26458335">{Mod1}</tspan></text>
+    <text
+       id="text4035"
+       y="230.32506"
+       x="14.755689"
+       style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+       xml:space="preserve"><tspan
+         style="font-size:7.05555582px;text-align:start;text-anchor:start;stroke-width:0.26458335"
+         y="230.32506"
+         x="14.755689"
+         id="tspan4033"
+         sodipodi:role="line">{Mod3}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+       x="14.755689"
+       y="240.9084"
+       id="text4039"><tspan
+         sodipodi:role="line"
+         id="tspan4037"
+         x="14.755689"
+         y="240.9084"
+         style="font-size:7.05555582px;text-align:start;text-anchor:start;stroke-width:0.26458335">{Mod5}</tspan></text>
+    <text
+       id="text4043"
+       y="251.49174"
+       x="14.755689"
+       style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+       xml:space="preserve"><tspan
+         style="font-size:7.05555582px;text-align:start;text-anchor:start;stroke-width:0.26458335"
+         y="251.49174"
+         x="14.755689"
+         id="tspan4041"
+         sodipodi:role="line">{Mod7}</tspan></text>
+    <text
+       id="text4047"
+       y="219.74171"
+       x="88.83902"
+       style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+       xml:space="preserve"><tspan
+         style="font-size:7.05555582px;text-align:start;text-anchor:start;stroke-width:0.26458335"
+         y="219.74171"
+         x="88.83902"
+         id="tspan4045"
+         sodipodi:role="line">{Mod2}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+       x="88.83902"
+       y="230.32506"
+       id="text4051"><tspan
+         sodipodi:role="line"
+         id="tspan4049"
+         x="88.83902"
+         y="230.32506"
+         style="font-size:7.05555582px;text-align:start;text-anchor:start;stroke-width:0.26458335">{Mod4}</tspan></text>
+    <text
+       id="text4055"
+       y="240.9084"
+       x="88.83902"
+       style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+       xml:space="preserve"><tspan
+         style="font-size:7.05555582px;text-align:start;text-anchor:start;stroke-width:0.26458335"
+         y="240.9084"
+         x="88.83902"
+         id="tspan4053"
+         sodipodi:role="line">{Mod6}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333397px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335"
+       x="88.83902"
+       y="251.49174"
+       id="text4059"><tspan
+         sodipodi:role="line"
+         id="tspan4057"
+         x="88.83902"
+         y="251.49174"
+         style="font-size:7.05555582px;text-align:start;text-anchor:start;stroke-width:0.26458335">{Mod8}</tspan></text>
+    <circle
+       style="fill:none;stroke:#000000;stroke-width:0.16864043"
+       r="6.4926558"
+       cy="259.56744"
+       cx="160.3553"
+       id="circle4061" />
+    <text
+       id="text4065"
+       y="264.1207"
+       x="159.69983"
+       style="font-style:normal;font-weight:normal;font-size:6.74561644px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16864043"
+       xml:space="preserve"><tspan
+         style="font-weight:bold;text-align:center;text-anchor:middle;stroke-width:0.16864043"
+         y="264.1207"
+         x="159.69983"
+         id="tspan4063"
+         sodipodi:role="line">U</tspan></text>
+    <text
+       id="text4069"
+       y="258.89291"
+       x="159.86288"
+       style="font-style:normal;font-weight:normal;font-size:6.74561644px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16864043"
+       xml:space="preserve"><tspan
+         style="text-align:center;text-anchor:middle;stroke-width:0.16864043"
+         y="258.89291"
+         x="159.86288"
+         id="tspan4067"
+         sodipodi:role="line">{Uranium Out}</tspan></text>
   </g>
 </svg>

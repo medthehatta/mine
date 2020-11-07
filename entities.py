@@ -57,6 +57,32 @@ def module_from_record(record):
     ]
     defaults = {k: "" for k in fields}
     data = {**defaults, **record}
-    data_formatted = {k.replace(" ", "_"): v for (k, v) in data.items()}
     interpolator = raw_interpolate_svg(f"{prefix}/svg_templates/module.svg")
-    return interpolator(data_formatted)
+    return interpolator(data)
+
+
+def upgrade_from_record(record):
+    fields = [
+        "Rules Text",
+        "Iron",
+        "Ice",
+        "Silicate",
+        "VP",
+        "Gold",
+        "Gold Out",
+        "Uranium",
+        "Uranium Out",
+    ] + [f"Mod{i}" for i in range(1, 8+1)]
+    modules_present = {
+        k: v
+        for (k, v) in record.items()
+        if k not in fields and v.strip()
+    }
+    modules = {
+        f"Mod{i}": f"{v} {k}"
+        for (i, (k, v)) in enumerate(modules_present.items())
+    }
+    defaults = {k: "" for k in fields}
+    data = {**defaults, **modules, **record}
+    interpolator = raw_interpolate_svg(f"{prefix}/svg_templates/upgrade.svg")
+    return interpolator(data)
