@@ -17,6 +17,7 @@ from gspread.client import Client
 
 import sheets
 import render_pil
+import entities
 
 
 #
@@ -24,7 +25,7 @@ import render_pil
 #
 
 
-prefix = "/mnt/c/Users/Med/Desktop/matt-asteroids/"
+prefix = os.path.dirname(os.path.abspath(__file__))
 
 
 #
@@ -242,7 +243,7 @@ def make_decks(
 
 
 generators = {
-    "asteroid": render_pil.asteroid_from_record,
+    "asteroid": entities.asteroid_from_record,
 }
 
 
